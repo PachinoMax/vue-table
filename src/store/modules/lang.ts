@@ -1,21 +1,19 @@
 import { defineStore } from 'pinia';
-import { LocalStorage } from '@/plugins/localStorage';
 
-const localStorage = new LocalStorage();
-
-export interface State {
-  lang: string;
+export enum Languages {
+  en = 'en',
+  fr = 'fr',
 }
 
 export const useLangStore = defineStore('lang', {
-  state: (): State => {
+  state: () => {
     return {
-      lang: ''
+      lang: Languages.en,
+      availableLanguages: [Languages.en, Languages.fr]
     }
   },
   getters: {
-    currentLang() {
-      if (!this.lang) this.lang = localStorage.get('lang');
+    currentLang(): string {
       return this.lang
     },
   },
@@ -23,11 +21,7 @@ export const useLangStore = defineStore('lang', {
     async changeLang(lang: string) {
       if (this.lang === lang) return;
       this.lang = lang;
-      localStorage.set('lang', lang);
-    },
-    async setLang() {
-      this.lang = 'en';
-      localStorage.set('lang', this.lang);
+      return this.lang;
     }
   },
 })

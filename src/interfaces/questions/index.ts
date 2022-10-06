@@ -4,5 +4,5 @@ export interface ILabel {
 }
 export interface IQuestions {
   _id: string;
-  labels: ILabel[]
+  labels: ILabel
 }

@@ -1,4 +1,33 @@
 @import './reset';
-@import './scores.scss';
+@import './normalize.scss';
 
 
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #4086d2;
+  margin: 10px 40px;
+  max-width: calc(100vm - 15rem);
+}
+main {
+  padding: 1rem 7rem;
+  min-height: calc(100vh - 15rem);
+}
+.active {
+  border: 1px solid #ccc;
+  background-color: #d18d3f;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.lang-decision {
+  width: 10%;
+  margin: 10px auto;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+}

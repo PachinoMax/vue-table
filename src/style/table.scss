@@ -1,0 +1,128 @@
+@import './scores.scss';
+.table {
+  position: relative;
+  max-height: 600px;
+  width: 100%;
+  overflow: scroll;
+}
+
+.table-body {
+  border-collapse: collapse;
+}
+th,
+tr,
+td {
+  padding: 10px 30px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+td .bad .ok .good{
+  text-align: center;
+}
+thead th {
+  position: sticky;
+  top:-1px;
+  z-index: 2;
+  background: #fff;
+}
+thead th:after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+  z-index: 2;
+}
+
+thead th:first-child {
+  left: 0;
+  z-index: 3;
+}
+tr > :first-child:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 1px;
+  background: #e0e0e0;
+  z-index: 2;
+}
+
+tr > :first-child {
+  position: sticky;
+  background: #fff;
+  left: 0;
+  z-index: 2;
+  text-align: left;
+}
+.search-block{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  position:relative;
+}
+.search-input {
+    font-size: 19px;
+    display:block;
+    height:46px;
+    padding: 10px;
+    margin: 0px 4px;
+    border:1px solid #f0f0f0;
+    align-self: end;
+}
+.search-button {
+    background-color: transparent;
+    height: 44px;
+    width: 44px;
+    position:absolute;
+    top:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    right:0;
+    z-index: 2;
+    border: transparent;
+    &:hover {
+        cursor: pointer;
+    }
+    svg {
+        color: #ccc;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+span {
+  padding: 0 5px;
+  color: black;
+  font-weight: 400;
+  font-size: 0.7rem;
+  border-radius: 2px;
+  display: block;
+
+  &.bad {
+    background: $score_1_light;
+    color: $score_1_dark;
+  }
+  &.ok {
+    background: $score_5_light;
+    color: $score_5_dark;
+  }
+  &.good {
+    background: $score_9_light;
+    color: $score_9_dark;
+  }
+}
+
+

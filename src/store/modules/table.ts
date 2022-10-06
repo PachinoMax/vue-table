@@ -2,9 +2,9 @@ import { defineStore } from 'pinia';
 import filters from '@/data/filters.json';
 import questions from '@/data/questions.json';
 import scores from '@/data/scores.json';
-import { IFilter } from '@/interfaces/filters/index';
-import { IQuestions } from '@/interfaces/questions/index';
-import { IScores } from '@/interfaces/scores/index';
+import { IFilter } from '@/interfaces/filters';
+import { IQuestions } from '@/interfaces/questions';
+import { IScores } from '@/interfaces/scores';
 
 export interface TableState {
   filters: IFilter[] | null,
